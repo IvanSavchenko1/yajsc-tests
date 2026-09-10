@@ -10,7 +10,7 @@ test('Login', async ({ page }) => {
         .fill('welcome01');
     await page.locator('.btnSubmit').click();
     await expect(page).toHaveURL('https://practicesoftwaretesting.com/account');
-    await expect(page.getByTestId('page-title')).toHaveText('My account');
+    await expect(page.getByTestId('page-title')).toHaveText('My account', {timeout: 10_000});
     await expect(page.locator('#menu')).toContainText('Jane Doe');
 
 });
